@@ -1,0 +1,896 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>ASHI COUTURE - RUNWAY</title>
+
+<link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<center>
+
+<h1 class="main-title">
+ASHI COUTURE
+</h1>
+
+<br />
+
+<marquee class="tagline" direction="right" scrollamount="12">
+<i>Where Art Meets Fashion</i>
+</marquee>
+
+<br /><br />
+
+<hr width="65%" />
+
+<br />
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="collections.html">Collections</a>
+<a href="designer.html">Designers</a>
+<a href="runway.html">Runway</a>
+
+<a href="custom.html">Custom Couture</a>
+
+<a href="contact.html">Contact</a>
+
+</center>
+
+</div><!-- CUSTOM ORDER PAGE -->
+
+<br /><br />
+
+<center>
+
+<div class="glass-box">
+
+<h1 class="main-title">
+CUSTOM COUTURE ORDER
+</h1>
+
+<p class="main-text">
+Design your dream couture piece with personalized fabrics, silhouettes, luxury embellishments, and exclusive runway-inspired craftsmanship.
+</p>
+
+</div>
+
+</center>
+
+<br /><br /><br />
+
+<!-- MULTI STEP FORM -->
+
+<center>
+
+<div class="custom-form-box">
+
+<!-- STEP INDICATOR -->
+
+<div class="step-indicator">
+
+<span class="step active-step">1</span>
+
+<span class="step">2</span>
+
+<span class="step">3</span>
+
+<span class="step">4</span>
+
+</div>
+
+<br /><br />
+
+<form id="customForm">
+
+<!-- STEP 1 -->
+
+<div class="form-step active-form">
+
+<h2>
+Select Dress Category
+</h2>
+
+<br />
+
+<select id="dressType" class="custom-input">
+
+<option value="45000">Bridal Couture</option>
+
+<option value="30000">Evening Wear</option>
+
+<option value="35000">Victorian Corset</option>
+
+<option value="40000">Luxury Runway Gown</option>
+
+</select>
+
+<br /><br />
+
+<button type="button" onclick="nextStep()" class="gold-btn">
+NEXT
+</button>
+
+</div>
+
+<!-- STEP 2 -->
+
+<div class="form-step">
+
+<h2>
+Choose Fabric
+</h2>
+
+<br />
+
+<select id="fabricType" class="custom-input">
+
+<option value="12000">Silk Satin</option>
+
+<option value="15000">French Velvet</option>
+
+<option value="18000">Luxury Organza</option>
+
+<option value="10000">Royal Tulle</option>
+
+</select>
+
+<br /><br />
+
+<button type="button" onclick="prevStep()" class="dark-btn">
+BACK
+</button>
+
+<button type="button" onclick="nextStep()" class="gold-btn">
+NEXT
+</button>
+
+</div>
+
+<!-- STEP 3 -->
+
+<div class="form-step">
+
+<h2>
+Add Luxury Embellishments
+</h2>
+
+<br />
+
+<select id="embellishment" class="custom-input">
+
+<option value="5000">Pearl Embroidery</option>
+
+<option value="8000">Crystal Detailing</option>
+
+<option value="10000">Handcrafted Lace Work</option>
+
+<option value="12000">3D Floral Couture</option>
+
+</select>
+
+<br /><br />
+
+<button type="button" onclick="prevStep()" class="dark-btn">
+BACK
+</button>
+
+<button type="button" onclick="nextStep()" class="gold-btn">
+NEXT
+</button>
+
+</div>
+
+<!-- STEP 4 -->
+
+<div class="form-step">
+
+<h2>
+Order Summary
+</h2>
+
+<br />
+
+<div class="price-preview">
+
+<h3>
+Estimated Couture Price
+</h3>
+
+<h1 id="totalPrice">
+₹0
+</h1>
+
+</div>
+
+<br />
+
+<button type="button" onclick="prevStep()" class="dark-btn">
+BACK
+</button>
+
+<button type="button" onclick="sendWhatsApp()" class="gold-btn">
+PLACE ORDER
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</center>
+
+<br /><br /><br />
+
+<!-- LIVE DRESS PREVIEW -->
+
+<center>
+
+<div class="preview-box">
+
+<h1 class="main-title">
+LIVE COUTURE PREVIEW
+</h1>
+
+<br />
+
+<img id="dressPreview"
+src="preview1.jpg"
+class="preview-img" />
+
+<br /><br />
+
+<button onclick="changePreview(1)" class="preview-btn">
+Bridal
+</button>
+
+<button onclick="changePreview(2)" class="preview-btn">
+Evening
+</button>
+
+<button onclick="changePreview(3)" class="preview-btn">
+Corset
+</button>
+
+<button onclick="changePreview(4)" class="preview-btn">
+Runway
+</button>
+
+</div>
+
+</center>
+
+<br /><br /><br />
+
+<script>
+
+/* MULTI STEP FORM */
+
+let currentStep = 0;
+
+let steps = document.querySelectorAll(".form-step");
+
+let indicators = document.querySelectorAll(".step");
+
+function showStep(index){
+
+steps.forEach(step => {
+
+step.classList.remove("active-form");
+
+});
+
+indicators.forEach(step => {
+
+step.classList.remove("active-step");
+
+});
+
+steps[index].classList.add("active-form");
+
+indicators[index].classList.add("active-step");
+
+calculatePrice();
+
+}
+
+function nextStep(){
+
+if(currentStep < steps.length - 1){
+
+currentStep++;
+
+showStep(currentStep);
+
+}
+
+}
+
+function prevStep(){
+
+if(currentStep > 0){
+
+currentStep--;
+
+showStep(currentStep);
+
+}
+
+}
+
+/* PRICE CALCULATOR */
+
+function calculatePrice(){
+
+let dress =
+parseInt(document.getElementById("dressType").value);
+
+let fabric =
+parseInt(document.getElementById("fabricType").value);
+
+let embellishment =
+parseInt(document.getElementById("embellishment").value);
+
+let total = dress + fabric + embellishment;
+
+document.getElementById("totalPrice").innerHTML =
+"₹" + total.toLocaleString();
+
+}
+
+/* LIVE DRESS PREVIEW */
+
+function changePreview(number){
+
+document.getElementById("dressPreview").src =
+"preview" + number + ".jpg";
+
+}
+
+showStep(currentStep);
+
+/* WHATSAPP ORDER MESSAGE */
+
+function sendWhatsApp(){
+
+let dress =
+document.getElementById("dressType");
+
+let fabric =
+document.getElementById("fabricType");
+
+let embellishment =
+document.getElementById("embellishment");
+
+let total =
+document.getElementById("totalPrice").innerText;
+
+let dressText =
+dress.options[dress.selectedIndex].text;
+
+let fabricText =
+fabric.options[fabric.selectedIndex].text;
+
+let embellishmentText =
+embellishment.options[embellishment.selectedIndex].text;
+
+let message =
+"Hello ASHI COUTURE,%0A%0A" +
+
+"I would like to place a custom couture order.%0A%0A" +
+
+"✨ Dress Category: " + dressText + "%0A" +
+
+"✨ Fabric Selection: " + fabricText + "%0A" +
+
+"✨ Embellishment Choice: " + embellishmentText + "%0A" +
+
+"✨ Estimated Couture Price: " + total + "%0A%0A" +
+
+"I would love to discuss further customization details with the designer.%0A%0A" +
+
+"Thank you.";
+
+window.open(
+"https://wa.me/917550395265?text=" + message,
+"_blank"
+);
+
+}
+</script><!-- AI STYLIST SECTION -->
+
+<br /><br /><br />
+
+<center>
+
+<div class="glass-box">
+
+<h1 class="main-title">
+AI COUTURE STYLIST
+</h1>
+
+<p class="main-text">
+Receive personalized couture recommendations curated by the ASHI COUTURE AI Stylist.
+Select your occasion and preferred aesthetic to discover your perfect couture look.
+</p>
+
+<br /><br />
+
+<!-- OCCASION -->
+
+<select id="occasion" class="input-field">
+
+<option value="">
+Select Occasion
+</option>
+
+<option value="bridal">
+Bridal Couture
+</option>
+
+<option value="evening">
+Evening Gala
+</option>
+
+<option value="luxury">
+Luxury Event
+</option>
+
+<option value="runway">
+Runway Editorial
+</option>
+
+</select>
+
+<br /><br />
+
+<!-- STYLE -->
+
+<select id="style" class="input-field">
+
+<option value="">
+Select Style
+</option>
+
+<option value="royal">
+Royal Elegance
+</option>
+
+<option value="victorian">
+Victorian Couture
+</option>
+
+<option value="modern">
+Modern Luxury
+</option>
+
+<option value="dramatic">
+Dark Dramatic
+</option>
+
+</select>
+
+<br /><br />
+
+<!-- BUTTON -->
+
+<button onclick="generateLook()" class="gold-btn">
+
+GENERATE LOOK
+
+</button>
+
+</div>
+
+</center>
+
+<!-- RESULT SECTION -->
+
+<br /><br /><br />
+
+<center>
+
+<div id="aiResult" class="ai-result-box">
+
+<img id="lookImage"
+src="dress1.jpg"
+class="ai-look-image" />
+
+<br /><br />
+
+<h2 id="lookTitle">
+Celestia Pearl Gown
+</h2>
+
+<p id="lookDesc">
+
+Elegant pearl embroidered bridal couture with royal detailing.
+
+</p>
+
+</div>
+
+</center>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* AI STYLIST */
+
+function generateLook(){
+
+let occasion =
+document.getElementById("occasion").value;
+
+let style =
+document.getElementById("style").value;
+
+let image =
+document.getElementById("lookImage");
+
+let title =
+document.getElementById("lookTitle");
+
+let desc =
+document.getElementById("lookDesc");
+
+
+
+/* BRIDAL + VICTORIAN */
+
+if(occasion == "bridal" && style == "victorian"){
+
+image.src = "dress3.jpg";
+
+title.innerHTML = "Ivory Duchess Corset";
+
+desc.innerHTML =
+"Victorian-inspired bridal couture masterpiece crafted with regal elegance and timeless sophistication.";
+
+}
+
+
+
+/* BRIDAL + ROYAL */
+
+else if(occasion == "bridal" && style == "royal"){
+
+image.src = "dress1.jpg";
+
+title.innerHTML = "Celestia Pearl Gown";
+
+desc.innerHTML =
+"Luxury pearl embroidered bridal couture designed for royal elegance and grand couture weddings.";
+
+}
+
+
+
+/* BRIDAL + MODERN */
+
+else if(occasion == "bridal" && style == "modern"){
+
+image.src = "dress2.jpg";
+
+title.innerHTML = "Moonveil Royale";
+
+desc.innerHTML =
+"Modern bridal couture with flowing layered silhouettes inspired by contemporary royal fashion.";
+
+}
+
+
+
+/* EVENING + DRAMATIC */
+
+else if(occasion == "evening" && style == "dramatic"){
+
+image.src = "dress4.jpg";
+
+title.innerHTML = "Noir Étoile Gown";
+
+desc.innerHTML =
+"A dramatic black couture silhouette crafted for refined evening glamour and cinematic elegance.";
+
+}
+
+
+
+/* EVENING + ROYAL */
+
+else if(occasion == "evening" && style == "royal"){
+
+image.src = "runway-look2.jpg";
+
+title.innerHTML = "Golden Reverie";
+
+desc.innerHTML =
+"Champagne gold couture styling inspired by European royal runway fashion.";
+
+}
+
+
+
+/* EVENING + MODERN */
+
+else if(occasion == "evening" && style == "modern"){
+
+image.src = "dress5.jpg";
+
+title.innerHTML = "Velvet Mirage";
+
+desc.innerHTML =
+"Emerald velvet evening couture blended with modern luxury aesthetics.";
+
+}
+
+
+
+/* LUXURY + MODERN */
+
+else if(occasion == "luxury" && style == "modern"){
+
+image.src = "dress7.jpg";
+
+title.innerHTML = "Aurelia Sculpt Dress";
+
+desc.innerHTML =
+"Architectural couture silhouette designed with artistic precision and modern elegance.";
+
+}
+
+
+
+/* LUXURY + ROYAL */
+
+else if(occasion == "luxury" && style == "royal"){
+
+image.src = "dress8.jpg";
+
+title.innerHTML = "Golden Eclipse Ensemble";
+
+desc.innerHTML =
+"Champagne gold couture crafted with premium luxury textures and royal sophistication.";
+
+}
+
+
+
+/* LUXURY + DRAMATIC */
+
+else if(occasion == "luxury" && style == "dramatic"){
+
+image.src = "dress9.jpg";
+
+title.innerHTML = "Opal Muse Couture";
+
+desc.innerHTML =
+"Contemporary couture masterpiece inspired by dramatic editorial runway fashion.";
+
+}
+
+
+
+/* RUNWAY + DRAMATIC */
+
+else if(occasion == "runway" && style == "dramatic"){
+
+image.src = "runway-look1.jpg";
+
+title.innerHTML = "Velvet Nocturne";
+
+desc.innerHTML =
+"Dramatic black couture runway styling inspired by timeless European luxury fashion.";
+
+}
+
+
+
+/* RUNWAY + ROYAL */
+
+else if(occasion == "runway" && style == "royal"){
+
+image.src = "runway-look2.jpg";
+
+title.innerHTML = "Golden Reverie";
+
+desc.innerHTML =
+"Royal champagne couture runway look crafted with sculpted luxury detailing.";
+
+}
+
+
+
+/* RUNWAY + VICTORIAN */
+
+else if(occasion == "runway" && style == "victorian"){
+
+image.src = "runway-look3.jpg";
+
+title.innerHTML = "Ivory Eclipse";
+
+desc.innerHTML =
+"A Victorian-inspired couture runway masterpiece combining elegance with contemporary glamour.";
+
+}
+
+
+
+/* DEFAULT LOOK */
+
+else{
+
+image.src = "dress6.jpg";
+
+title.innerHTML = "Midnight Symphony";
+
+desc.innerHTML =
+"Satin couture evening masterpiece designed for timeless sophistication and graceful luxury.";
+
+}
+
+}
+
+</script><br />
+
+<br><br><br>
+
+<center>
+
+<!-- COUTURE APPOINTMENT BOOKING -->
+
+<center>
+
+<div class="glass-box">
+
+<h1 class="form-title">
+Reserve Private Consultation
+</h1>
+
+<p class="form-subtitle">
+Book a personalized couture consultation with our designers.
+</p>
+
+<br>
+
+<input
+type="date"
+id="appointmentDate"
+class="input-box">
+
+<br><br>
+
+<select
+id="appointmentTime"
+class="input-box">
+
+<option value="">Select Time</option>
+
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>01:00 PM</option>
+<option>02:00 PM</option>
+<option>03:00 PM</option>
+<option>04:00 PM</option>
+<option>05:00 PM</option>
+
+</select>
+
+<br><br>
+
+<select
+id="appointmentOccasion"
+class="input-box">
+
+<option value="">Select Occasion</option>
+
+<option>Bridal Couture</option>
+
+<option>Evening Wear</option>
+
+<option>Custom Couture</option>
+
+<option>Luxury Photoshoot</option>
+
+<option>Fashion Consultation</option>
+
+<option>Runway Event</option>
+
+</select>
+
+<br><br><br>
+
+<button
+class="gold-btn"
+onclick="bookAppointment()">
+
+Reserve Consultation
+
+</button>
+
+</div>
+
+</center>
+
+<br><br><br>
+<script>
+
+function bookAppointment(){
+
+var date =
+document.getElementById("appointmentDate").value;
+
+var time =
+document.getElementById("appointmentTime").value;
+
+var occasion =
+document.getElementById("appointmentOccasion").value;
+
+if(date === "" || time === "" || occasion === "")
+{
+alert("Please complete all appointment details.");
+return;
+}
+
+var message =
+"Hello ASHI COUTURE,%0A%0A" +
+
+"I would like to reserve a Private Couture Consultation.%0A%0A" +
+
+"Appointment Details:%0A%0A" +
+
+"Date: " + date + "%0A" +
+
+"Time: " + time + "%0A" +
+
+"Occasion: " + occasion + "%0A%0A" +
+
+"I look forward to discussing my couture requirements.%0A%0A" +
+
+"Thank you.";
+
+window.open(
+"https://wa.me/917550395265?text=" + message,
+"_blank"
+);
+
+}
+
+</script>
+<!-- FOOTER -->
+
+<div class="footer">
+
+<center>
+
+<h2>
+ASHI COUTURE
+</h2>
+
+<p>Email: ashicouture@gmail.com</p>
+
+<p>Instagram | Pinterest | Facebook</p>
+
+</center>
+
+</div>
+</body>
+
+</html>

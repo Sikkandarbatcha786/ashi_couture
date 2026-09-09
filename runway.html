@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>ASHI COUTURE - RUNWAY</title>
+
+<link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<center>
+
+<h1 class="main-title">
+ASHI COUTURE
+</h1>
+
+<br />
+
+<marquee class="tagline" direction="right" scrollamount="12">
+<i>Where Art Meets Fashion</i>
+</marquee>
+
+<br /><br />
+
+<hr width="65%" />
+
+<br />
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="collections.html">Collections</a>
+
+<a href="runway.html">Runway</a>
+
+
+<a href="custom.html">Custom Couture</a>
+
+<a href="contact.html">Contact</a>
+
+
+
+</center>
+
+</div>
+
+<!-- RUNWAY HERO SECTION -->
+
+<div class="runway-container">
+
+<!-- SLIDER IMAGES -->
+
+<img src="runway1.jpg" class="runway-slide active-slide" />
+
+<img src="runway2.jpg" class="runway-slide" />
+
+<img src="runway3.jpg" class="runway-slide" />
+
+<!-- DARK OVERLAY -->
+
+<div class="runway-overlay"></div>
+
+<!-- RUNWAY CONTENT -->
+
+<div class="runway-content">
+
+<h1 class="runway-title">
+ASHI COUTURE RUNWAY
+</h1>
+
+<p class="runway-text">
+A cinematic couture experience inspired by timeless elegance, dramatic silhouettes, and luxury fashion artistry.
+</p>
+
+<br />
+
+<!-- TIMER -->
+
+<div class="timer-box">
+
+<h2>
+NEXT SHOW BEGINS IN
+</h2>
+
+<div id="countdown" class="countdown">
+00h : 00m : 00s
+</div>
+
+</div>
+
+<br /><br />
+
+<!-- MUSIC BUTTON -->
+
+<button onclick="toggleMusic()" class="music-btn">
+🔊 RUNWAY SOUND
+</button>
+
+</div>
+
+</div>
+
+<!-- AUDIO -->
+
+<audio id="bgMusic" loop>
+
+<source src="runway-music.mp3" type="audio/mpeg" />
+
+</audio>
+
+<!-- RUNWAY GALLERY -->
+
+<br /><br /><br />
+
+<center>
+
+<div class="glass-box">
+
+<h1 class="main-title">
+THE RUNWAY EXPERIENCE
+</h1>
+
+<p class="main-text">
+Discover couture artistry through sculpted silhouettes, flowing fabrics, and cinematic luxury inspired by international fashion weeks.
+</p>
+
+</div>
+
+</center>
+
+<br /><br /><br />
+
+<table align="center" cellpadding="25">
+
+<tr>
+
+<!-- LOOK 1 -->
+
+<td>
+
+<div class="runway-card">
+
+<img src="runway-look1.jpg" class="runway-look-img" />
+
+<h2>
+Velvet Nocturne
+</h2>
+
+<p>
+A dramatic black couture silhouette inspired by royal European runway fashion.
+</p>
+
+</div>
+
+</td>
+
+<!-- LOOK 2 -->
+
+<td>
+
+<div class="runway-card">
+
+<img src="runway-look2.jpg" class="runway-look-img" />
+
+<h2>
+Golden Reverie
+</h2>
+
+<p>
+Champagne gold textures blended with sculpted luxury couture craftsmanship.
+</p>
+
+</div>
+
+</td>
+
+<!-- LOOK 3 -->
+
+<td>
+
+<div class="runway-card">
+
+<img src="runway-look3.jpg" class="runway-look-img" />
+
+<h2>
+Ivory Eclipse
+</h2>
+
+<p>
+A modern couture masterpiece combining Victorian elegance with contemporary glamour.
+</p>
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+<br /><br /><br />
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* MUSIC */
+
+let music = document.getElementById("bgMusic");
+
+music.volume = 0.3;
+
+function toggleMusic(){
+
+if(music.paused){
+
+music.play();
+
+}
+
+else{
+
+music.pause();
+
+}
+
+}
+
+/* IMAGE SLIDER */
+
+let slides = document.querySelectorAll(".runway-slide");
+
+let currentSlide = 0;
+
+function showSlides(){
+
+slides.forEach(slide => {
+
+slide.classList.remove("active-slide");
+
+});
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+
+currentSlide = 0;
+
+}
+
+slides[currentSlide].classList.add("active-slide");
+
+}
+
+setInterval(showSlides, 4000);
+
+/* COUNTDOWN TIMER */
+
+let showDate = new Date("Dec 31, 2026 20:00:00").getTime();
+
+let timer = setInterval(function(){
+
+let now = new Date().getTime();
+
+let distance = showDate - now;
+
+let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+
+hours + "h : " + minutes + "m : " + seconds + "s";
+
+},1000);
+
+</script>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<center>
+
+<h2>
+ASHI COUTURE
+</h2>
+
+<p>Email: ashicouture@gmail.com</p>
+
+<p>Instagram | Pinterest | Facebook</p>
+
+</center>
+
+</div>
+</body>
+
+</html>

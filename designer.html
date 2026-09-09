@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>ASHI COUTURE - DESIGNERS</title>
+
+<link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<center>
+
+<h1 class="main-title">
+ASHI COUTURE
+</h1>
+
+<br />
+
+<marquee class="tagline" direction="right" scrollamount="12">
+<i>Where Art Meets Fashion</i>
+</marquee>
+
+<br /><br />
+
+<hr width="65%" />
+
+<br />
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="collections.html">Collections</a>
+
+<a href="designer.html">Designers</a>
+
+<a href="runway.html">RunWay</a>
+
+<a href="custom.html">Custom Couture</a>
+
+<a href="contact.html">Contact</a>
+
+</center>
+
+</div>
+
+<!-- DESIGNERS SECTION -->
+
+<br /><br /><br />
+
+<center>
+
+<div class="glass-box">
+
+<h1 class="main-title">
+MEET THE DESIGNERS
+</h1>
+
+<p class="main-text">
+The creative visionaries behind ASHI COUTURE transform timeless elegance into luxury couture artistry.
+</p>
+
+</div>
+
+</center>
+
+<br /><br /><br />
+
+<!-- DESIGNER FLIP CARDS -->
+
+<table align="center" cellpadding="35">
+
+<tr>
+
+<!-- DESIGNER 1 -->
+
+<td>
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<!-- FRONT -->
+
+<div class="flip-card-front">
+
+<img src="designer1.jpg" class="designer-img" />
+
+</div>
+
+<!-- BACK -->
+
+<div class="flip-card-back">
+
+<h2 class="designer-name">
+Ashi Rahman
+</h2>
+
+<h3 class="designer-role">
+Founder & Creative Director
+</h3>
+
+<p class="designer-text">
+
+Known for her signature Victorian couture and regal bridal aesthetics, Ashi Rahman transforms timeless elegance into wearable art.
+
+</p>
+
+<p class="designer-quote">
+
+“Fashion should feel like poetry stitched into fabric.”
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</td>
+
+<!-- DESIGNER 2 -->
+
+<td>
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<!-- FRONT -->
+
+<div class="flip-card-front">
+
+<img src="designer2.jpg" class="designer-img" />
+
+</div>
+
+<!-- BACK -->
+
+<div class="flip-card-back">
+
+<h2 class="designer-name">
+Elena D’Mour
+</h2>
+
+<h3 class="designer-role">
+Luxury Runway Designer
+</h3>
+
+<p class="designer-text">
+
+Specializing in dramatic evening couture, Elena creates silhouettes inspired by European royal fashion and modern glamour.
+
+</p>
+
+<p class="designer-quote">
+
+“Elegance begins where trends end.”
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</td>
+
+<!-- DESIGNER 3 -->
+
+<td>
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<!-- FRONT -->
+
+<div class="flip-card-front">
+
+<img src="designer3.jpg" class="designer-img" />
+
+</div>
+
+<!-- BACK -->
+
+<div class="flip-card-back">
+
+<h2 class="designer-name">
+Lucien Vale
+</h2>
+
+<h3 class="designer-role">
+Artistic Fashion Stylist
+</h3>
+
+<p class="designer-text">
+
+Blending architecture with couture craftsmanship, Lucien is known for sculpted luxury silhouettes and editorial styling.
+
+</p>
+
+<p class="designer-quote">
+
+“Every gown should tell a story before a word is spoken.”
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+<br /><br /><br />
+
+
+<br /><br /><br />
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const cards = document.querySelectorAll(".flip-card");
+
+cards.forEach(card => {
+
+card.addEventListener("mousemove", function(e){
+
+const x = e.offsetX;
+const y = e.offsetY;
+
+card.style.boxShadow =
+`${x/25}px ${y/25}px 35px rgba(212,180,131,0.45)`;
+
+});
+
+card.addEventListener("mouseleave", function(){
+
+card.style.boxShadow =
+"0px 10px 30px rgba(0,0,0,0.18)";
+
+});
+
+});
+
+</script>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<center>
+
+<h2>
+ASHI COUTURE
+</h2>
+
+<p>Email: ashicouture@gmail.com</p>
+
+<p>Instagram | Pinterest | Facebook</p>
+
+</center>
+
+</div>
+
+</body>
+
+</html>
