@@ -604,3 +604,541 @@ color:white;
 padding:20px;
 margin-top:40px;
 }
+/* =========================================================
+   ASHI COUTURE — MOBILE RESPONSIVE DESIGN
+   Desktop styles remain untouched
+   ========================================================= */
+
+@media (max-width: 768px){
+
+    /* ---------- GLOBAL ---------- */
+
+    *{
+        box-sizing:border-box;
+    }
+
+    html{
+        width:100%;
+        overflow-x:hidden;
+    }
+
+    body{
+        width:100%;
+        overflow-x:hidden;
+        background-attachment:scroll;
+        background-position:center top;
+        background-size:cover;
+        font-size:16px;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    .header{
+        width:100%;
+        padding:18px 12px;
+        text-align:center;
+        background:rgba(255,255,255,0.78);
+    }
+
+    .main-title{
+        font-size:32px;
+        letter-spacing:4px;
+        line-height:1.2;
+        margin:0 0 8px;
+    }
+
+    .tagline{
+        font-size:16px;
+        line-height:1.5;
+        margin:0;
+    }
+
+    .header a,
+    a{
+        display:inline-block;
+        padding:9px 7px;
+        font-size:14px;
+    }
+
+
+    /* ---------- BUTTONS ---------- */
+
+    .main-button{
+        padding:13px 24px;
+        font-size:15px;
+        border-radius:10px;
+        letter-spacing:1px;
+        max-width:100%;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero-box{
+        width:90%;
+        max-width:500px;
+        padding:24px 20px;
+        margin:20px auto;
+        border-radius:15px;
+    }
+
+    .hero-title{
+        font-size:28px;
+        line-height:1.3;
+        margin-top:0;
+    }
+
+    .hero-text{
+        font-size:16px;
+        line-height:1.7;
+        text-align:left;
+    }
+
+
+    /* ---------- SECTION TITLES ---------- */
+
+    .section-title{
+        max-width:90%;
+        padding:12px 18px;
+        font-size:25px;
+        line-height:1.3;
+    }
+
+
+    /* ---------- COLLECTION BOX ---------- */
+
+    .collection-box{
+        width:90%;
+        max-width:350px;
+        padding:18px;
+        margin:15px auto;
+    }
+
+
+    /* ---------- QUOTE ---------- */
+
+    .quote-box{
+        width:90%;
+        max-width:500px;
+        padding:20px;
+        margin:auto;
+    }
+
+    .quote-box p{
+        font-size:16px;
+        line-height:1.7;
+    }
+
+
+    /* ---------- GLASS BOX ---------- */
+
+    .glass-box{
+        width:90%;
+        max-width:500px;
+        padding:25px 20px;
+        margin:20px auto;
+        border-radius:20px;
+    }
+
+
+    /* ---------- FORM ---------- */
+
+    .form-title{
+        font-size:30px;
+        letter-spacing:2px;
+        line-height:1.3;
+    }
+
+    .form-subtitle{
+        font-size:16px;
+        line-height:1.6;
+    }
+
+    .label{
+        font-size:16px;
+    }
+
+    .input-box{
+        width:100%;
+        max-width:100%;
+        padding:13px;
+        font-size:16px;
+    }
+
+
+    /* ---------- COLLECTION PAGE ---------- */
+
+    .page-box{
+        width:92%;
+        padding:20px 15px;
+        margin:auto;
+        border-radius:16px;
+    }
+
+    .category-title{
+        padding:12px 22px;
+        font-size:22px;
+    }
+
+    .product-card{
+        width:100% !important;
+        max-width:360px;
+        margin:15px auto;
+        padding:15px;
+    }
+
+    .vertical-card,
+    .horizontal-card{
+        width:100%;
+        max-width:360px;
+    }
+
+    .vertical-image{
+        width:100%;
+        height:auto;
+        max-height:460px;
+        object-fit:cover;
+    }
+
+    .horizontal-image{
+        width:100%;
+        height:auto;
+        max-height:260px;
+        object-fit:cover;
+    }
+
+    .product-title{
+        font-size:23px;
+        line-height:1.3;
+    }
+
+    .product-text{
+        font-size:16px;
+        line-height:1.7;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-box{
+        width:90%;
+        max-width:500px;
+        padding:25px 20px;
+        margin:20px auto;
+        border-radius:20px;
+    }
+
+
+    /* ---------- DESIGNER PAGE ---------- */
+
+    .main-text{
+        font-size:17px;
+        line-height:1.7;
+    }
+
+    .flip-card{
+        width:280px;
+        max-width:90vw;
+        height:390px;
+        margin:20px auto;
+    }
+
+    .flip-card-back{
+        padding:22px;
+    }
+
+    .designer-img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+
+    /* ---------- RUNWAY ---------- */
+
+    .runway-container{
+        width:100%;
+        height:100svh;
+        min-height:600px;
+    }
+
+    .runway-slide{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+    .runway-overlay{
+        background:rgba(0,0,0,0.48);
+    }
+
+    .runway-content{
+        width:90%;
+        max-width:500px;
+    }
+
+    .runway-title{
+        font-size:42px;
+        letter-spacing:3px;
+        line-height:1.15;
+        margin-bottom:15px;
+    }
+
+    .runway-text{
+        font-size:17px;
+        line-height:1.7;
+    }
+
+
+    /* ---------- TIMER ---------- */
+
+    .timer-box{
+        width:90%;
+        max-width:350px;
+        padding:18px;
+    }
+
+    .countdown{
+        font-size:30px;
+        letter-spacing:2px;
+    }
+
+
+    /* ---------- MUSIC BUTTON ---------- */
+
+    .music-btn{
+        padding:13px 24px;
+        font-size:15px;
+    }
+
+
+    /* ---------- RUNWAY CARDS ---------- */
+
+    .runway-card{
+        width:90%;
+        max-width:350px;
+        margin:20px auto;
+        padding:15px;
+    }
+
+    .runway-look-img{
+        width:100%;
+        height:auto;
+        max-height:470px;
+        object-fit:cover;
+    }
+
+    .runway-card h2{
+        font-size:25px;
+        margin-top:15px;
+    }
+
+    .runway-card p{
+        font-size:16px;
+        line-height:1.7;
+    }
+
+
+    /* ---------- CUSTOM ORDER ---------- */
+
+    .custom-form-box{
+        width:92%;
+        max-width:500px;
+        padding:25px 18px;
+        margin:auto;
+        border-radius:22px;
+    }
+
+    .step-indicator{
+        gap:10px;
+        flex-wrap:wrap;
+    }
+
+    .step{
+        width:38px;
+        height:38px;
+        line-height:38px;
+        font-size:16px;
+    }
+
+    .custom-input{
+        width:100%;
+        max-width:100%;
+        padding:13px;
+        font-size:16px;
+    }
+
+    .gold-btn,
+    .dark-btn{
+        padding:13px 23px;
+        font-size:15px;
+        margin:7px 3px;
+    }
+
+    .price-preview{
+        width:90%;
+        padding:20px;
+    }
+
+    .price-preview h1{
+        font-size:38px;
+    }
+
+
+    /* ---------- PREVIEW ---------- */
+
+    .preview-box{
+        width:92%;
+        max-width:500px;
+        padding:20px 15px;
+        margin:auto;
+    }
+
+    .preview-img{
+        width:100%;
+        max-width:350px;
+        height:auto;
+        max-height:470px;
+        object-fit:cover;
+        border-radius:16px;
+    }
+
+    .preview-btn{
+        padding:10px 16px;
+        margin:5px 2px;
+        font-size:14px;
+    }
+
+
+    /* ---------- AI RESULT ---------- */
+
+    .ai-result-box{
+        width:90%;
+        max-width:400px;
+        padding:20px;
+        margin:20px auto;
+    }
+
+    .ai-look-image{
+        width:100%;
+        height:auto;
+        max-height:450px;
+        object-fit:cover;
+    }
+
+
+    /* ---------- INPUT FIELD ---------- */
+
+    .input-field{
+        width:100%;
+        max-width:100%;
+        padding:13px;
+        font-size:16px;
+    }
+
+
+    /* ---------- APPOINTMENT ---------- */
+
+    .appointment-box{
+        width:90%;
+        max-width:500px;
+        padding:25px 20px;
+        margin:20px auto;
+        border-radius:20px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer{
+        width:100%;
+        padding:25px 15px;
+        margin-top:30px;
+        text-align:center;
+    }
+
+    .footer a{
+        padding:7px;
+        font-size:14px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px){
+
+    .main-title{
+        font-size:27px;
+        letter-spacing:3px;
+    }
+
+    .tagline{
+        font-size:14px;
+    }
+
+    a{
+        font-size:13px;
+        padding:7px 5px;
+    }
+
+    .hero-box{
+        width:92%;
+        padding:20px 16px;
+    }
+
+    .hero-title{
+        font-size:25px;
+    }
+
+    .hero-text{
+        font-size:15px;
+        line-height:1.65;
+    }
+
+    .section-title{
+        font-size:22px;
+    }
+
+    .form-title{
+        font-size:27px;
+    }
+
+    .runway-title{
+        font-size:35px;
+    }
+
+    .runway-text{
+        font-size:15px;
+    }
+
+    .countdown{
+        font-size:26px;
+    }
+
+    .flip-card{
+        width:260px;
+        height:365px;
+    }
+
+    .product-title{
+        font-size:21px;
+    }
+
+    .gold-btn,
+    .dark-btn,
+    .main-button,
+    .music-btn{
+        width:auto;
+        max-width:100%;
+    }
+
+    .preview-img{
+        max-height:400px;
+    }
+
+}
