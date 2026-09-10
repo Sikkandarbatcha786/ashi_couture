@@ -603,201 +603,154 @@ background:rgba(0,0,0,0.7);
 color:white;
 padding:20px;
 margin-top:40px;
-}
+}  
 /* =========================================================
-   ASHI COUTURE — MOBILE RESPONSIVE DESIGN
-   Desktop styles remain untouched
+   ASHI COUTURE - MOBILE DESIGN
    ========================================================= */
 
-@media (max-width: 768px){
-
-    /* ---------- GLOBAL ---------- */
+@media screen and (max-width:768px){
 
     *{
         box-sizing:border-box;
     }
 
-    html{
+    html,
+    body{
         width:100%;
+        max-width:100%;
         overflow-x:hidden;
     }
 
     body{
-        width:100%;
-        overflow-x:hidden;
         background-attachment:scroll;
         background-position:center top;
         background-size:cover;
-        font-size:16px;
     }
 
 
-    /* ---------- HEADER ---------- */
+    /* ================= HEADER ================= */
 
     .header{
         width:100%;
-        padding:18px 12px;
+        padding:22px 12px 18px;
         text-align:center;
-        background:rgba(255,255,255,0.78);
+        background:rgba(255,255,255,0.88);
     }
 
     .main-title{
         font-size:32px;
-        letter-spacing:4px;
+        letter-spacing:5px;
         line-height:1.2;
-        margin:0 0 8px;
+        margin:0;
     }
 
     .tagline{
         font-size:16px;
-        line-height:1.5;
-        margin:0;
+        margin:8px 0 18px;
+        font-style:italic;
     }
 
-    .header a,
-    a{
+
+    /* ================= NAVIGATION ================= */
+
+    .header a{
         display:inline-block;
-        padding:9px 7px;
+        padding:8px 8px;
+        margin:2px 0;
         font-size:14px;
+        line-height:1.2;
+        white-space:nowrap;
+    }
+
+    .header a:hover{
+        color:#D4B483;
     }
 
 
-    /* ---------- BUTTONS ---------- */
-
-    .main-button{
-        padding:13px 24px;
-        font-size:15px;
-        border-radius:10px;
-        letter-spacing:1px;
-        max-width:100%;
-    }
-
-
-    /* ---------- HERO ---------- */
+    /* ================= HERO ================= */
 
     .hero-box{
         width:90%;
         max-width:500px;
-        padding:24px 20px;
-        margin:20px auto;
-        border-radius:15px;
+        margin:35px auto;
+        padding:28px 20px;
+        border-radius:20px;
+        background:rgba(255,255,255,0.82);
     }
 
     .hero-title{
         font-size:28px;
         line-height:1.3;
+        text-align:center;
         margin-top:0;
+        margin-bottom:22px;
     }
 
     .hero-text{
-        font-size:16px;
-        line-height:1.7;
+        font-size:17px;
+        line-height:1.75;
         text-align:left;
+        overflow-wrap:break-word;
     }
 
 
-    /* ---------- SECTION TITLES ---------- */
+    /* ================= SECTION TITLES ================= */
 
     .section-title{
+        display:block;
+        width:max-content;
         max-width:90%;
-        padding:12px 18px;
-        font-size:25px;
-        line-height:1.3;
+        margin:25px auto;
+        padding:11px 18px;
+        font-size:24px;
+        text-align:center;
     }
 
 
-    /* ---------- COLLECTION BOX ---------- */
+    /* ================= BUTTON ================= */
+
+    .main-button{
+        padding:13px 28px;
+        font-size:15px;
+        border-radius:10px;
+    }
+
+
+    /* ================= COLLECTION ================= */
 
     .collection-box{
         width:90%;
-        max-width:350px;
-        padding:18px;
-        margin:15px auto;
-    }
-
-
-    /* ---------- QUOTE ---------- */
-
-    .quote-box{
-        width:90%;
-        max-width:500px;
+        max-width:360px;
+        margin:18px auto;
         padding:20px;
-        margin:auto;
     }
-
-    .quote-box p{
-        font-size:16px;
-        line-height:1.7;
-    }
-
-
-    /* ---------- GLASS BOX ---------- */
-
-    .glass-box{
-        width:90%;
-        max-width:500px;
-        padding:25px 20px;
-        margin:20px auto;
-        border-radius:20px;
-    }
-
-
-    /* ---------- FORM ---------- */
-
-    .form-title{
-        font-size:30px;
-        letter-spacing:2px;
-        line-height:1.3;
-    }
-
-    .form-subtitle{
-        font-size:16px;
-        line-height:1.6;
-    }
-
-    .label{
-        font-size:16px;
-    }
-
-    .input-box{
-        width:100%;
-        max-width:100%;
-        padding:13px;
-        font-size:16px;
-    }
-
-
-    /* ---------- COLLECTION PAGE ---------- */
 
     .page-box{
         width:92%;
-        padding:20px 15px;
+        padding:22px 15px;
         margin:auto;
-        border-radius:16px;
     }
 
     .category-title{
-        padding:12px 22px;
-        font-size:22px;
+        padding:11px 22px;
+        font-size:21px;
     }
 
     .product-card{
         width:100% !important;
         max-width:360px;
-        margin:15px auto;
-        padding:15px;
+        margin:20px auto;
     }
 
     .vertical-card,
     .horizontal-card{
         width:100%;
-        max-width:360px;
     }
 
     .vertical-image{
         width:100%;
         height:auto;
-        max-height:460px;
+        max-height:470px;
         object-fit:cover;
     }
 
@@ -810,7 +763,6 @@ margin-top:40px;
 
     .product-title{
         font-size:23px;
-        line-height:1.3;
     }
 
     .product-text{
@@ -819,43 +771,72 @@ margin-top:40px;
     }
 
 
-    /* ---------- CONTACT ---------- */
+    /* ================= QUOTE ================= */
 
-    .contact-box{
+    .quote-box{
+        width:90%;
+        margin:25px auto;
+        padding:22px 18px;
+    }
+
+
+    /* ================= GLASS BOX ================= */
+
+    .glass-box{
         width:90%;
         max-width:500px;
+        margin:25px auto;
         padding:25px 20px;
-        margin:20px auto;
         border-radius:20px;
     }
 
 
-    /* ---------- DESIGNER PAGE ---------- */
+    /* ================= FORMS ================= */
+
+    .form-title{
+        font-size:29px;
+        line-height:1.3;
+        letter-spacing:2px;
+    }
+
+    .form-subtitle{
+        font-size:16px;
+        line-height:1.6;
+    }
+
+    .label{
+        font-size:16px;
+    }
+
+    .input-box,
+    .input-field,
+    .custom-input{
+        width:100%;
+        max-width:100%;
+        padding:13px;
+        font-size:16px;
+    }
+
+
+    /* ================= DESIGNER ================= */
 
     .main-text{
         font-size:17px;
-        line-height:1.7;
+        line-height:1.75;
     }
 
     .flip-card{
-        width:280px;
-        max-width:90vw;
-        height:390px;
-        margin:20px auto;
+        width:270px;
+        height:380px;
+        margin:25px auto;
     }
 
     .flip-card-back{
         padding:22px;
     }
 
-    .designer-img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-    }
 
-
-    /* ---------- RUNWAY ---------- */
+    /* ================= RUNWAY ================= */
 
     .runway-container{
         width:100%;
@@ -869,20 +850,15 @@ margin-top:40px;
         object-fit:cover;
     }
 
-    .runway-overlay{
-        background:rgba(0,0,0,0.48);
-    }
-
     .runway-content{
         width:90%;
-        max-width:500px;
+        max-width:450px;
     }
 
     .runway-title{
-        font-size:42px;
-        letter-spacing:3px;
+        font-size:40px;
         line-height:1.15;
-        margin-bottom:15px;
+        letter-spacing:3px;
     }
 
     .runway-text{
@@ -890,30 +866,22 @@ margin-top:40px;
         line-height:1.7;
     }
 
-
-    /* ---------- TIMER ---------- */
-
     .timer-box{
-        width:90%;
-        max-width:350px;
         padding:18px;
+        max-width:340px;
     }
 
     .countdown{
-        font-size:30px;
-        letter-spacing:2px;
+        font-size:29px;
     }
 
-
-    /* ---------- MUSIC BUTTON ---------- */
-
     .music-btn{
-        padding:13px 24px;
+        padding:13px 25px;
         font-size:15px;
     }
 
 
-    /* ---------- RUNWAY CARDS ---------- */
+    /* ================= RUNWAY CARDS ================= */
 
     .runway-card{
         width:90%;
@@ -926,12 +894,10 @@ margin-top:40px;
         width:100%;
         height:auto;
         max-height:470px;
-        object-fit:cover;
     }
 
     .runway-card h2{
         font-size:25px;
-        margin-top:15px;
     }
 
     .runway-card p{
@@ -940,18 +906,17 @@ margin-top:40px;
     }
 
 
-    /* ---------- CUSTOM ORDER ---------- */
+    /* ================= CUSTOM ORDER ================= */
 
     .custom-form-box{
         width:92%;
         max-width:500px;
         padding:25px 18px;
         margin:auto;
-        border-radius:22px;
     }
 
     .step-indicator{
-        gap:10px;
+        gap:8px;
         flex-wrap:wrap;
     }
 
@@ -962,18 +927,11 @@ margin-top:40px;
         font-size:16px;
     }
 
-    .custom-input{
-        width:100%;
-        max-width:100%;
-        padding:13px;
-        font-size:16px;
-    }
-
     .gold-btn,
     .dark-btn{
-        padding:13px 23px;
+        padding:12px 22px;
         font-size:15px;
-        margin:7px 3px;
+        margin:6px 3px;
     }
 
     .price-preview{
@@ -986,11 +944,10 @@ margin-top:40px;
     }
 
 
-    /* ---------- PREVIEW ---------- */
+    /* ================= DRESS PREVIEW ================= */
 
     .preview-box{
         width:92%;
-        max-width:500px;
         padding:20px 15px;
         margin:auto;
     }
@@ -1001,55 +958,42 @@ margin-top:40px;
         height:auto;
         max-height:470px;
         object-fit:cover;
-        border-radius:16px;
     }
 
     .preview-btn{
-        padding:10px 16px;
+        padding:10px 15px;
         margin:5px 2px;
         font-size:14px;
     }
 
 
-    /* ---------- AI RESULT ---------- */
+    /* ================= AI RESULT ================= */
 
     .ai-result-box{
         width:90%;
         max-width:400px;
-        padding:20px;
         margin:20px auto;
+        padding:20px;
     }
 
     .ai-look-image{
         width:100%;
         height:auto;
         max-height:450px;
-        object-fit:cover;
     }
 
 
-    /* ---------- INPUT FIELD ---------- */
-
-    .input-field{
-        width:100%;
-        max-width:100%;
-        padding:13px;
-        font-size:16px;
-    }
-
-
-    /* ---------- APPOINTMENT ---------- */
+    /* ================= APPOINTMENT ================= */
 
     .appointment-box{
         width:90%;
         max-width:500px;
         padding:25px 20px;
         margin:20px auto;
-        border-radius:20px;
     }
 
 
-    /* ---------- FOOTER ---------- */
+    /* ================= FOOTER ================= */
 
     .footer{
         width:100%;
@@ -1058,37 +1002,33 @@ margin-top:40px;
         text-align:center;
     }
 
-    .footer a{
-        padding:7px;
-        font-size:14px;
-    }
-
 }
 
 
 /* =========================================================
-   EXTRA SMALL PHONES
+   SMALL PHONES
    ========================================================= */
 
-@media (max-width: 480px){
+@media screen and (max-width:480px){
 
     .main-title{
-        font-size:27px;
-        letter-spacing:3px;
+        font-size:29px;
+        letter-spacing:4px;
     }
 
     .tagline{
-        font-size:14px;
+        font-size:15px;
     }
 
-    a{
+    .header a{
         font-size:13px;
-        padding:7px 5px;
+        padding:7px 6px;
     }
 
     .hero-box{
         width:92%;
-        padding:20px 16px;
+        padding:24px 17px;
+        margin-top:28px;
     }
 
     .hero-title{
@@ -1096,49 +1036,25 @@ margin-top:40px;
     }
 
     .hero-text{
-        font-size:15px;
-        line-height:1.65;
+        font-size:16px;
+        line-height:1.7;
     }
 
     .section-title{
-        font-size:22px;
-    }
-
-    .form-title{
-        font-size:27px;
-    }
-
-    .runway-title{
-        font-size:35px;
-    }
-
-    .runway-text{
-        font-size:15px;
-    }
-
-    .countdown{
-        font-size:26px;
-    }
-
-    .flip-card{
-        width:260px;
-        height:365px;
-    }
-
-    .product-title{
         font-size:21px;
     }
 
-    .gold-btn,
-    .dark-btn,
-    .main-button,
-    .music-btn{
-        width:auto;
-        max-width:100%;
+    .form-title{
+        font-size:26px;
     }
 
-    .preview-img{
-        max-height:400px;
+    .runway-title{
+        font-size:34px;
+    }
+
+    .flip-card{
+        width:255px;
+        height:360px;
     }
 
 }
